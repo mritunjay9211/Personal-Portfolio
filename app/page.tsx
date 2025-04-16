@@ -12,10 +12,36 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 import { cn } from "@/lib/utils"
 
-
 export default function Home() {
-  const [projects, setProjects] = useState([])
-  const [isLoading, setIsLoading] = useState(true)
+  // Remove the projects fetch state since we are using manual projects
+  const manualProjects = [
+    {
+      id: 1,
+      name: "Relify",
+      description: "A modern Next.js application for managing and selling video content using ImageKit integration. This project provides a full-featured platform with user authentication, video upload capabilities, and payment processing using Razorpay.",
+      html_url: "https://github.com/SwapnilChakraborty/Relify.git",
+      homepage: "https://relify-ruby.vercel.app/",
+    },
+    {
+      id: 2,
+      name: "Smart Code Reviewer",
+      description: "A simple and powerful web app that uses Google Generative AI to review your code and provide instant feedback and suggestions..",
+      html_url: "https://github.com/SwapnilChakraborty/Code-reviewer.git",
+      homepage: "https://code-reviewer-6-g24y.onrender.com/",
+    },
+    {
+      id: 3,
+      name: "Food Delivery website",
+      description: "A full stack Food delivery website",
+      html_url: "https://github.com/SwapnilChakraborty/Food-Delivery-Website.git",
+      homepage: "", // No demo available
+    },
+    // Add more manual projects here if needed
+  ]
+
+  // Remove dynamic fetching logic and loading state if not required for manual projects
+  // const [projects, setProjects] = useState([])
+  // const [isLoading, setIsLoading] = useState(true)
 
   // Refs for animations/scrolling
   const heroRef = useRef(null)
@@ -34,21 +60,6 @@ export default function Home() {
 
   const { scrollYProgress } = useScroll()
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"])
-
-  useEffect(() => {
-    const fetchProjects = async () => {
-      try {
-        const response = await fetch("https://api.github.com/users/SwapnilChakraborty/repos")
-        const data = await response.json()
-        setProjects(data)
-        setIsLoading(false)
-      } catch (error) {
-        console.error("Error fetching projects:", error)
-        setIsLoading(false)
-      }
-    }
-    fetchProjects()
-  }, [])
 
   // EmailJS handler function using env variables
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
@@ -162,7 +173,7 @@ export default function Home() {
                 </Link>
               </Button>
               <Button asChild variant="outline" size="sm" className="gap-2">
-                <Link href="#" target="_blank">
+                <Link href="https://www.linkedin.com/in/swapnilchakraborty/" target="_blank">
                   <Linkedin className="w-4 h-4" /> LinkedIn
                 </Link>
               </Button>
@@ -291,63 +302,57 @@ export default function Home() {
           <div className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm">My Work</div>
           <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">Featured Projects</h2>
           <p className="text-muted-foreground md:text-xl max-w-[800px] mx-auto">
-            Here are some of my recent projects. Each one represents a unique challenge and solution.
+            Here are some of my manually added projects. Each one represents a unique challenge and solution.
           </p>
         </motion.div>
 
-        {isLoading ? (
-          <div className="grid place-items-center h-[300px]">
-            <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"></div>
-          </div>
-        ) : (
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {projects.slice(0, 6).map((project, index) => (
-              <motion.div
-                key={project.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={projectsInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: 0.1 * index }}
-              >
-                <Card className="h-full overflow-hidden hover:shadow-lg transition-all">
-                  <CardHeader className="pb-2">
-                    <CardTitle className="text-xl">{project.name}</CardTitle>
-                    <CardDescription className="line-clamp-2">
-                      {project.description || "A cool project by Swapnil Chakraborty"}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="pb-2">
-                    <div className="h-[120px] rounded-md bg-primary/5 mb-4 flex items-center justify-center">
-                      <Code className="w-10 h-10 text-primary/40" />
-                    </div>
-                    <div className="flex flex-wrap gap-2">
-                      {["React", "Node.js", "MongoDB"].map((tech) => (
-                        <span key={tech} className="text-xs px-2 py-1 rounded-full bg-muted">
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </CardContent>
-                  <CardFooter>
-                    <div className="flex gap-2 w-full">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {manualProjects.map((project, index) => (
+            <motion.div
+              key={project.id}
+              initial={{ opacity: 0, y: 20 }}
+              animate={projectsInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.1 * index }}
+            >
+              <Card className="h-full overflow-hidden hover:shadow-lg transition-all">
+                <CardHeader className="pb-2">
+                  <CardTitle className="text-xl">{project.name}</CardTitle>
+                  <CardDescription className="line-clamp-2">
+                    {project.description}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="pb-2">
+                  <div className="h-[120px] rounded-md bg-primary/5 mb-4 flex items-center justify-center">
+                    <Code className="w-10 h-10 text-primary/40" />
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {["React", "Node.js", "MongoDB","Postgres","Nextjs"].map((tech) => (
+                      <span key={tech} className="text-xs px-2 py-1 rounded-full bg-muted">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </CardContent>
+                <CardFooter>
+                  <div className="flex gap-2 w-full">
+                    <Button asChild variant="outline" size="sm" className="w-full gap-1">
+                      <Link href={project.html_url} target="_blank">
+                        <Github className="w-4 h-4" /> Code
+                      </Link>
+                    </Button>
+                    {project.homepage && (
                       <Button asChild variant="outline" size="sm" className="w-full gap-1">
-                        <Link href={project.html_url} target="_blank">
-                          <Github className="w-4 h-4" /> Code
+                        <Link href={project.homepage} target="_blank">
+                          <ExternalLink className="w-4 h-4" /> Demo
                         </Link>
                       </Button>
-                      {project.homepage && (
-                        <Button asChild variant="outline" size="sm" className="w-full gap-1">
-                          <Link href={project.homepage} target="_blank">
-                            <ExternalLink className="w-4 h-4" /> Demo
-                          </Link>
-                        </Button>
-                      )}
-                    </div>
-                  </CardFooter>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        )}
+                    )}
+                  </div>
+                </CardFooter>
+              </Card>
+            </motion.div>
+          ))}
+        </div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -497,4 +502,3 @@ export default function Home() {
     </main>
   )
 }
-
