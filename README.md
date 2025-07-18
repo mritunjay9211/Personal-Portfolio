@@ -1,28 +1,98 @@
-# Portfolio Website
+# 💼 Personal Developer Portfolio
 
-This is my personal portfolio website built using **Next.js**, **ShadeCN**, and **EmailJS**. It showcases my skills, projects, and provides a contact form for visitors to reach out to me.
+![Banner](./public/portfolio.png)
 
-## Features
+A responsive, animated, and fully customizable **developer portfolio website** built using **Next.js**, **Tailwind CSS**, **Framer Motion**, and **TypeScript**. Showcasing skills, projects, and a contact form powered by EmailJS.
 
-- **Next.js**: A powerful React framework for building server-side rendered (SSR) and statically generated web applications.
-- **ShadeCN**: A modern design system used for styling components and ensuring a clean, user-friendly UI.
-- **EmailJS**: Used for handling contact form submissions without the need for a backend server.
+---
 
-## Live Demo
+## 🚀 Features
 
-You can view the live portfolio [here]((https://portfolio-tau-wheat-42.vercel.app/)).
+- ✨ Beautiful, modern UI with smooth animations
+- 💻 Projects section with GitHub & Live Demo links
+- 📜 About section with profile and experience
+- ⚙️ Skills tabs for frontend, backend, and tools
+- 📬 Contact form with **EmailJS** integration
+- 🌐 Fully responsive across all devices
+- 🎯 Scroll-based animation with Framer Motion
+- 💡 SEO-optimized and deploy-ready
 
-## Getting Started
+---
 
-To get started with this project, follow these steps:
+## 🛠️ Tech Stack
 
-### Prerequisites
+- **Frontend**: Next.js, Tailwind CSS, Framer Motion
+- **Animation**: Framer Motion
+- **Icons**: Lucide Icons
+- **Email**: EmailJS (no backend needed)
+- **Hosting**: Vercel (recommended)
 
-- **Node.js**: Make sure you have Node.js installed. You can download it from [here](https://nodejs.org/).
+---
 
-### Installation
+## 📸 Screenshots
 
-1. Clone this repository:
+| Landing Page | Projects Section |
+|--------------|------------------|
+| ![Hero](./public/portfolio.png) | ![Projects](./public/imaginix.png) |
 
-   ```bash
-   git clone https://github.com/SwapnilChakraborty/Portfolio.git
+---
+
+## 📂 Folder Structure
+├── components/ # UI Components (Buttons, Cards, Tabs, etc.)
+
+├── public/ # Static Assets (Images, Icons)
+
+├── pages/ # Next.js Pages
+
+├── styles/ # Global CSS (Tailwind)
+
+├── lib/ # Utility functions
+
+└── README.md
+
+
+---
+
+## 🧪 Getting Started
+
+1. **Clone the repository**
+```bash
+git clone https://github.com/mritunjay9211/Personal-Portfolio.git
+cd Personal-Portfolio
+```
+2. **Install dependencies**
+```bash
+npm i
+```
+3. **Set up EmailJS**
+Create a .env.local file in root and add:
+``` bash
+NEXT_PUBLIC_EMAILJS_SERVICE_ID=your_service_id
+NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_template_id
+NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
+```
+4. **Run locally**
+```
+npm run dev
+```
+
+5. **Build for production**
+```
+npm run build
+npm start
+```
+
+## 🌍 Live Demo
+
+Deployed using Vercel
+
+## 🙋‍♂️ About Me
+I’m Mritunjay Thakur — a Computer Science Engineering graduate & full-stack developer passionate about building real-world web applications and solving meaningful problems.
+
+
+📬 mritunjaythakur2003@gmail.com
+
+## 📃 License
+This project is open source and available under the MIT License.
+
+
