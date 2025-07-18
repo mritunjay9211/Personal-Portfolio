@@ -30,8 +30,8 @@ export default function Home() {
     tech: ["Next.js", "TailwindCSS", "Framer Motion", "Vercel"],
     image : "/portfolio.png", 
     description: "A developer portfolio to showcase skills, projects, and contact details.",
-    html_url: "https://github.com/SwapnilChakraborty/Code-reviewer.git",
-    homepage: "https://code-reviewer-6-g24y.onrender.com/"
+    html_url: "",
+    homepage: "https://mritunjaythakur.vercel.app/"
   },
   {
     id: 3,
@@ -184,7 +184,7 @@ export default function Home() {
                 </Link>
               </Button>
               <Button asChild variant="secondary" size="sm" className="gap-2">
-                  <Link href="https://drive.google.com/file/d/1emFsi6h-4jfXni8TDjE2PqwtNUVCA-KK/view?usp=drive_link" target="_blank">
+                  <Link href="https://drive.google.com/file/d/1AsjlKnf04gjNV3rsMYeZanuTpolWibYX/view?usp=drive_link" target="_blank">
                       Download Resume <Download className="w-4 h-4"/>
                   </Link>
               </Button>
