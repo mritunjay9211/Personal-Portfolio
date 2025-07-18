@@ -30,7 +30,7 @@ export default function Home() {
     tech: ["Next.js", "TailwindCSS", "Framer Motion", "Vercel"],
     image : "/portfolio.png", 
     description: "A developer portfolio to showcase skills, projects, and contact details.",
-    html_url: "",
+    html_url: "https://github.com/mritunjay9211/Personal-Portfolio.git",
     homepage: "https://mritunjaythakur.vercel.app/"
   },
   {
