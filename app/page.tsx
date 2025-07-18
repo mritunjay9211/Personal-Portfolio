@@ -191,28 +191,13 @@ export default function Home() {
 
             </div>
           </div>
-          
-          {/* <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={aboutInView ? { opacity: 1, scale: 1 } : {}}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="relative ml-80 w-[300px] h-[400px] overflow-hidden rounded-xl bg-primary/5"
-                >
-                <div className="absolute inset-0 flex items-center justify-center">
-                    <img
-                        src="/harsh.png"
-                        alt="Harsh's profile"
-                        className="h-[350px] w-auto object-cover rounded-xl shadow-lg"/>
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent" />
-          </motion.div> */}
             <motion.div
                 className="relative w-full max-w-xs sm:max-w-sm md:max-w-md mx-auto overflow-hidden rounded-xl bg-primary/5"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={aboutInView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 0.8, delay: 0.2 }}
             >
-            <div className="relative w-full pt-[125%]"> {/* Aspect ratio for responsiveness */}
+            <div className="relative w-full pt-[125%]"> 
                 <img
                   src="/harsh.png"
                   alt="Mritunjay Thakur's profile picture"
