@@ -184,7 +184,7 @@ export default function Home() {
                 </Link>
               </Button>
               <Button asChild variant="secondary" size="sm" className="gap-2">
-                  <Link href="https://drive.google.com/file/d/1AsjlKnf04gjNV3rsMYeZanuTpolWibYX/view?usp=drive_link" target="_blank">
+                  <Link href="https://drive.google.com/file/d/1kQ70tg3csVjt2DIWgnFrYtz-_yQK3WtP/view?usp=drive_link" target="_blank">
                       Download Resume <Download className="w-4 h-4"/>
                   </Link>
               </Button>
